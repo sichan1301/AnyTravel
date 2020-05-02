@@ -1,0 +1,13 @@
+body{
+  background-image: url("../index.jpg");
+  background-repeat: no-repeat;
+  background-size : cover;
+  background-position: center center;
+  background-attachment: fixed;  
+}
+.title{
+  font-family: 'Cookie', cursive;
+  text-align:center;
+  font-size : 220px;
+  color :rgb(71, 5, 66);
+}
