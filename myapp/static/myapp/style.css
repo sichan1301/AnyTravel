@@ -11,3 +11,16 @@ body{
   font-size : 220px;
   color :rgb(71, 5, 66);
 }
+
+.hi{
+  font-size:500px;
+}
+
+.card-body{
+  text-align: center;
+}
+
+
+.pagination{
+  font-size:35px;
+}

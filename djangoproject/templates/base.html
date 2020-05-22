@@ -10,10 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">      
     <meta charset="utf-8">
         <title>Any Travel</title>
+    {% block baseheader %}
+    {% endblock %}
     </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Any Travel</a>
+        <a class="navbar-brand" href="{% url 'myapp:index' %}">Any Travel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,44 +24,21 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                유럽
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">서유럽</a>
-                <a class="dropdown-item" href="#">동유럽</a>
-                <a class="dropdown-item" href="#">북유럽</a>
-              </div>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">일본</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">홍콩/마카오/대만</a>
+              <a class="nav-link" href="{% url 'myapp:read' %}">게시판</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">동남아</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">중국</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">괌/사이판/팔라우</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">미국/캐나다/중남미</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">호주/뉴질랜드</a>
-            </li>
+            
+
             <li style="text-align:right" class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 로그인
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">회원가입</a>
-                <a class="dropdown-item" href="#">로그아웃</a>
+                <a class="dropdown-item" href="{% url 'login:login' %}">회원가입</a>
+                <a class="dropdown-item" href="{% url 'login:logout' %}">로그아웃</a>
               </div>
             </li>
           </ul>

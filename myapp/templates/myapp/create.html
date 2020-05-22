@@ -1,0 +1,14 @@
+{%load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <br>
+    <input type="submit" value="제출하기">
+</form>
+
+
+<p class="hi">하이</p>

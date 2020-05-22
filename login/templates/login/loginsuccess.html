@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block contents %}
+<div style="text-align:center">
+
+<h2 style="text-align:center">로그인에 성공하셨습니다.</h2> 
+<br><br>
+<ul class="nav navbar-nav navbar-right">
+        {% if user.is_active %}
+         {{user.username}} 님 환영합니다
+         {% endif %}<br><br>
+        <a href="{% url 'login:index' %}">
+        <input class="btn btn-light" type="submit" value="홈으로"></a>
+{% endblock %}
+</div>

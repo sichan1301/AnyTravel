@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+{% block baseheader %}
+<style>
+.hehe{
+    font-size:100px
+}
+</style>
+{% endblock %}
+{% block contents %}
+
+
+
+<div style="text-align:center">
+<div style="margin-top:20px"></div>
+<p style="font-size : 50px;">로그인</p>
+<br>
+
+{{ error }} <br>
+
+<form action="{% url 'login:login'%}", method="POST" >
+{% csrf_token %}
+Username:
+<br>
+<input name ="username" type="text" placeholder="아이디" style = " width : 330px; height:40px; ">
+<br><br>
+
+Password:
+<br>
+<input name="password" type="password" placeholder="비밀번호" style="width:330px; height:40px;">
+<br>
+<br>
+
+<input class="btn btn-light" type="submit" value="로그인">
+</form>
+
+<br><br><br>
+<div style="text-align:center">
+<p>아직 회원이 아니신가요?</p><a href="{% url 'login:signup' %}">
+    <input type="submit" value="회원가입"></a>
+</div>
+</div>
+</div>
+
+
+<p class = "hehe">헤헤</p>
+{% endblock %}

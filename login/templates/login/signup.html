@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block contents %}
+<br>
+<h1 style="text-align:center">회원가입</h1>
+<br><br>
+
+<form  action ="{% url 'login:signup' %}" method ="POST" 
+style="text-align:center">
+    {% csrf_token %}
+    <h1>구분</h1>
+    
+    <h2>아 이 디</h2> 
+    <input name="username" type="text" placeholder="아이디" style="width:100; height:40px; ">
+    <br><br>
+    <h2>비 밀 번 호</h2>
+    <input name="password1" type="password" placeholder="비밀번호" style="width:100; height:40px ">
+    <br><br>
+    <h2>비밀번호확인</h2>
+    <input name="password2" type="password" placeholder="비밀번호" style="width:100; height:40px ">
+    
+    <br><br><br><br><br>
+    <a href="{% url 'login:success' %}"></a>
+    <input type="submit" value="회원가입">
+</form>
+
+{% endblock %}

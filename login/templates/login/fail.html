@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block contents %}
+<div style="text-align:center">
+<h2> 비밀번호가 일치하지 않습니다. </h2>
+
+<br>
+<h1>회원가입</h1>
+
+<br><br><br>
+
+<form method ="POST" action ="{% url 'login:signup' %}">
+    {% csrf_token %}
+    <h1>아 이 디</h1> 
+    <br>
+    <input name="username" type="text">
+    <br><br><br><br>
+    <h1>비 밀 번 호</h1>
+    <br>
+    <input name="password1" type="password">
+    <br><br>
+    <h1>비밀번호확인</h1>
+    <input name="password2" type="password">
+    <br><br><br><br><br>
+    <input type="submit" value="회원가입하기">
+</form>
+</div>
+{% endblock %}
