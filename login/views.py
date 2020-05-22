@@ -39,10 +39,11 @@ def login(request):
         return render(request, 'login/login.html')
 
 def logout(request):
-    if request.method == 'POST':
-        auth.logout(request)
-        return redirect('login:login')
-    return render(request, 'login/logout.html')
+    response = render(request, 'login/logout.html')
+    response.delete_cookie('username')
+    response.delete_cookie('password')
+    auth.logout(request)
+    return response
 
 def success(request):
         return render(request,'login/success.html')       
